@@ -15,7 +15,7 @@ export class PipeParser implements ParserInterface {
 	protected parseTemplate(template: string, relativePath: string): TranslationCollection {
 		let collection: TranslationCollection = new TranslationCollection();
 
-		const regExp: RegExp = /(['"`])((?:(?!\1).|\\\1)+)\1\s*\|\s*translate\s*(:.*:.*:?.*')?/g;
+		const regExp = /(['"`])((?:(?!\1).|\\\1)+)\1\s*\|\s*translate\s*(:.*:.*:?.*')?/g;
 		let matches: RegExpExecArray;
 		while (matches = regExp.exec(template)) {
 			let context = '';
@@ -25,11 +25,13 @@ export class PipeParser implements ParserInterface {
              const splParams = matches[3].split(':');
 
              if ( splParams[ 2 ] ) {
-             	context = splParams[2].slice( 1, splParams[2].length - 1 );
+							context = splParams[2].trim();
+							context = context.slice(1, context.length - 1);
 			 }
 
              if ( splParams[ 3 ] ) {
-             	comment = splParams[3].slice( 1, splParams[3].length - 1 );
+							comment = splParams[3].trim();
+							comment = comment.slice(1, comment.length - 1);
 			 }
 			}
 
