@@ -1,6 +1,6 @@
 {
   "name": "@shavenzov/ngx-translate-extract",
-  "version": "3.0.11",
+  "version": "3.0.12",
   "description": "Extract strings from projects using ngx-translate with context and comment support",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
