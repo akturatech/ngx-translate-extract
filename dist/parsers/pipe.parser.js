@@ -19,10 +19,12 @@ class PipeParser {
             if (matches[3]) {
                 const splParams = matches[3].split(':');
                 if (splParams[2]) {
-                    context = splParams[2].slice(1, splParams[2].length - 1);
+                    context = splParams[2].trim();
+                    context = context.slice(1, context.length - 1);
                 }
                 if (splParams[3]) {
-                    comment = splParams[3].slice(1, splParams[3].length - 1);
+                    comment = splParams[3].trim();
+                    comment = comment.slice(1, comment.length - 1);
                 }
             }
             let key = matches[2].split('\\\'').join('\'');
