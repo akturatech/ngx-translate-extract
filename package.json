@@ -14,7 +14,7 @@
   "scripts": {
     "build": "npm run clean && tsc",
     "watch": "npm run clean && tsc --watch",
-    "clean": "rd /s /q \"./dist\"",
+    "clean": "rm -r --force ./dist",
     "lint": "tslint --force './src/**/*.ts'",
     "test": "mocha -r ts-node/register tests/**/*.spec.ts"
   },
